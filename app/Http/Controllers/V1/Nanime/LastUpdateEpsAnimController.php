@@ -77,7 +77,10 @@ class LastUpdateEpsAnimController extends Controller
                         $genre .= $dataGenreAs.',';
                     }
                 }
-                $Episode_ = substr(strrchr($dataLastUpdateAs['slug'], '-'), 1);
+                $Episode_ = substr(strrchr($dataLastUpdateAs['slug'], 'e-'), 2);
+                // /forr find chacter - after get data number episode
+                $findChacater = strpos($Episode_, '-');
+                $Episode_ = ($findChacater) ? substr($Episode_, 0, strpos($Episode_, "-")) : $Episode_;
                 $TitleAlias = ucwords(str_replace('-',' ',$dataLastUpdateAs['slug']));
                 $Title = ucwords($dataLastUpdateAs['title']);
                 $Episode = is_numeric($Episode_) ? round($Episode_) : 'Movie';
@@ -129,9 +132,10 @@ class LastUpdateEpsAnimController extends Controller
             }
             // mengurutkan ulang data lats update anime
             $DataLastUpdateComb = [
-                $this->reSortKeyArrayLastUpdate($LastUpdateAnime1),
-                $this->reSortKeyArrayLastUpdate($LastUpdateAnime2),
+                $LastUpdateAnime1,
+                $LastUpdateAnime2,
             ];
+            
             $LastUpdateAnime = $this->combinationArray($DataLastUpdateComb);
             $seachTotal = $TotalSearch['collection'];
             $TotalSearchPage = HelpersController::TotalSeachPage($limitRange, $seachTotal);
