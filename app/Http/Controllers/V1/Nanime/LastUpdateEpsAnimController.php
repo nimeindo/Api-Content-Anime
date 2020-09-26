@@ -110,6 +110,8 @@ class LastUpdateEpsAnimController extends Controller
                         "SlugDetail" => $SlugDetail,
                         "SlugEp" => $dataLastUpdateAs['slug'],
                         'PublishDate' => Carbon::parse($dataLastUpdateAs['cron_at'])->format('Y-m-d\TH:i:s'),
+                        'PublishDateAgo' => Carbon::parse($dataLastUpdateAs['cron_at'])->diffForHumans(),
+                        'cron_at' => $dataLastUpdateAs['cron_at']
                     );
                 }else{
                     $LastUpdateAnime2[] = array(
@@ -126,6 +128,8 @@ class LastUpdateEpsAnimController extends Controller
                         "SlugDetail" => $SlugDetail,
                         "SlugEp" => $dataLastUpdateAs['slug'],
                         'PublishDate' => Carbon::parse($dataLastUpdateAs['cron_at'])->format('Y-m-d\TH:i:s'),
+                        'PublishDateAgo' => Carbon::parse($dataLastUpdateAs['cron_at'])->diffForHumans(),
+                        'cron_at' => $dataLastUpdateAs['cron_at']
                     );
                 }
                 
@@ -189,7 +193,9 @@ class LastUpdateEpsAnimController extends Controller
                     "IdListEpisode" => $DataLastupdate[$i][$j]['IdListEpisode'],
                     "SlugDetail" => $DataLastupdate[$i][$j]['SlugDetail'],
                     "SlugEp" => $DataLastupdate[$i][$j]['SlugEp'],
-                    'PublishDate' => $DataLastupdate[$i][$j]['PublishDate']
+                    'PublishDate' => $DataLastupdate[$i][$j]['PublishDate'],
+                    'PublishDateAgo' => $DataLastupdate[$i][$j]['PublishDateAgo'],
+                    'cron_at' => $DataLastupdate[$i][$j]['cron_at']
                 ];       
             }
         }
