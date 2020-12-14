@@ -20,9 +20,9 @@ use App\Models\V1\MainModel as MainModel;
 class ListAnimeController extends Controller
 {
 
-    public function testing(){
+    public function Testing(){
         // phpinfo();exit;
-        echo "WELCOM TO API CONTENT LIST ANIME NIMEINDO V1";
+        echo "WELCOM TO API CONTENT LIST ANIME NIMEINDO V2";
     }
 
     public function ListAnime(Request $request){
