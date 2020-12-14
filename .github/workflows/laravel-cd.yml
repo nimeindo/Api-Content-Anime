@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CD
 
 # Controls when the action will run. 
 on:
@@ -26,7 +26,7 @@ jobs:
           port: 22
           script: 
             cd /var/www/prod/anime/api/api-content/Api-Content-Anime/
-            sudo git pull origin master
+            git pull origin master
             git status 
              
             
