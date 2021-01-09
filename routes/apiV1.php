@@ -3,7 +3,7 @@
 // Nanime
 $router->group(['prefix' => 'N/1', 'namespace' => 'V1\Nanime'], function () use ($router){
     #List Anime
-    $router->get('testingList', 'ListAnimeController@testing');
+    $router->get('Testing', 'ListAnimeController@Testing');
     $router->post('ListAnime', 'ListAnimeController@ListAnime');
     $router->post('DetailAnime', 'DetailListAnimeController@DetailListAnim');
     $router->post('SearchAnime', 'SearchAnimeControoler@SearchAnime');
