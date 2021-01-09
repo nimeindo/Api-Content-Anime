@@ -112,7 +112,7 @@ class StreamAnimeController extends Controller
                         "ListInfo" => $ListInfo,
                         "Synopsis" => $dataStreamAs['synopsis']
                     );
-                    $Title = ucwords(str_replace('-',' ',$dataStreamAs['slug']));
+                    $Title = ucwords(str_replace('-',' ',$dataStreamAs['title']));
                     $StreamAnime[] = array(
                         "Title" => $Title,
                         'PublishDate' => Carbon::parse($dataStreamAs['cron_at'])->format('Y-m-d\TH:i:s'),
